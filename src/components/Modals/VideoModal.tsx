@@ -28,7 +28,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, useExac
         {/* Video Canvas / Player Simulation */}
         <div className="relative aspect-video w-full bg-neutral-950 flex items-center justify-center overflow-hidden">
           <img
-            src={'/images/about_bw_portrait.jpg'}
+            src={'./images/about_bw_portrait.jpg'}
             alt="Umair Habib Video Intro"
             className="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-700 ease-out"
           />

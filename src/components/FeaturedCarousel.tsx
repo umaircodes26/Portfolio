@@ -17,7 +17,7 @@ interface LightboxData {
 
 /** Card 1 — Personal Portfolio mini-site mockup */
 const PortfolioMockup: React.FC<{ onOpenImage: (data: LightboxData) => void }> = ({ onOpenImage }) => {
-  const imgSrc = '/images/web_dev_intern.jpg';
+  const imgSrc = './images/web_dev_intern.jpg';
   const imgData: LightboxData = {
     src: imgSrc,
     alt: 'Web Developer Coding Workspace',
@@ -93,7 +93,7 @@ const PortfolioMockup: React.FC<{ onOpenImage: (data: LightboxData) => void }> =
 
 /** Card 2 — Business Landing Page mini mockup */
 const BusinessMockup: React.FC<{ onOpenImage: (data: LightboxData) => void }> = ({ onOpenImage }) => {
-  const imgSrc = '/images/ft_business.png';
+  const imgSrc = './images/ft_business.png';
   const imgData: LightboxData = {
     src: imgSrc,
     alt: 'Business Landing Page Laptop Workspace',
@@ -165,7 +165,7 @@ const BusinessMockup: React.FC<{ onOpenImage: (data: LightboxData) => void }> = 
 
 /** Card 3 — Product Card Design mini mockup */
 const ProductMockup: React.FC<{ onOpenImage: (data: LightboxData) => void }> = ({ onOpenImage }) => {
-  const imgSrc = '/images/ft_product.jpg';
+  const imgSrc = './images/ft_product.jpg';
   const imgData: LightboxData = {
     src: imgSrc,
     alt: 'Smartwatch Product Card Design',
@@ -261,7 +261,7 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
   {
     id: 1,
     renderMockup: (onOpen) => <PortfolioMockup onOpenImage={onOpen} />,
-    imageSrc: '/images/web_dev_intern.jpg',
+    imageSrc: './images/web_dev_intern.jpg',
     tags: ['HTML', 'CSS', 'JavaScript'],
     title: 'Personal Portfolio Website',
     description: 'My own portfolio website to showcase my skills, projects and learning journey.',
@@ -270,7 +270,7 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
   {
     id: 2,
     renderMockup: (onOpen) => <BusinessMockup onOpenImage={onOpen} />,
-    imageSrc: '/images/ft_business.png',
+    imageSrc: './images/ft_business.png',
     tags: ['HTML', 'CSS'],
     title: 'Business Landing Page',
     description: 'A clean and responsive business landing page with hero section, services and footer.',
@@ -279,7 +279,7 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
   {
     id: 3,
     renderMockup: (onOpen) => <ProductMockup onOpenImage={onOpen} />,
-    imageSrc: '/images/ft_product.jpg',
+    imageSrc: './images/ft_product.jpg',
     tags: ['HTML', 'CSS', 'JavaScript'],
     title: 'Product Card Design',
     description: 'A simple and responsive product card with image, name, price and add to cart button.',

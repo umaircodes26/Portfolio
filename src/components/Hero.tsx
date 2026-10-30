@@ -10,7 +10,7 @@ export const Hero: React.FC = () => {
   };
 
   // User's B&W portrait — white glow overlay hover effect
-  const portraitSrc = '/images/hero_portrait_main.jpg';
+  const portraitSrc = './images/hero_portrait_main.jpg';
 
   return (
     <section className="relative min-h-[92vh] lg:min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 flex items-center justify-center overflow-hidden">

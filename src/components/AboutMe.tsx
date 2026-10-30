@@ -7,8 +7,8 @@ interface AboutMeProps {
 }
 
 export const AboutMe: React.FC<AboutMeProps> = ({ onOpenVideo }) => {
-  const photoSrc = '/images/about_bw_portrait.jpg';
-  const videoThumbSrc = '/images/web_dev_intern.jpg';
+  const photoSrc = './images/about_bw_portrait.jpg';
+  const videoThumbSrc = './images/web_dev_intern.jpg';
 
   const skills = [
     { name: 'HTML', color: 'text-[#E44D26]', bg: 'bg-[#E44D26]/10' },

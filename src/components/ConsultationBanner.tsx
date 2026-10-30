@@ -11,8 +11,8 @@ export const ConsultationBanner: React.FC<ConsultationBannerProps> = ({
   useExactAssets = true,
 }) => {
   const bgImage = useExactAssets
-    ? '/images/upscaled/banner.png'
-    : '/images/banner_bg.jpg';
+    ? './images/upscaled/banner.png'
+    : './images/banner_bg.jpg';
 
   return (
     <section className="py-10 md:py-16">
