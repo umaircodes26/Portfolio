@@ -10,25 +10,35 @@ interface ConsultationBannerProps {
 
 export const ConsultationBanner: React.FC<ConsultationBannerProps> = ({
   onBookCall,
-  useExactAssets = true,
 }) => {
-  const bgImage = useExactAssets
-    ? './images/upscaled/banner.png'
-    : './images/banner_bg.jpg';
+  // 1. Original Default Background (Smooth Teal & Purple Abstract Waves)
+  const originalBg = './images/banner_bg.jpg';
+  // 2. Hover State Background (Dark Blurred Car Backdrop matching reference image 1)
+  const hoverCarBg = './images/car_banner_hover.jpg';
 
   return (
     <section className="py-10 md:py-16">
       <div className="max-w-[1280px] mx-auto px-6 md:px-10">
-        <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-neutral-950 text-white min-h-[240px] sm:min-h-[260px] md:min-h-[300px] flex items-center justify-center p-6 sm:p-10 md:p-14 text-center shadow-xl shadow-neutral-900/10 group">
+        <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-neutral-950 text-white min-h-[240px] sm:min-h-[260px] md:min-h-[300px] flex items-center justify-center p-6 sm:p-10 md:p-14 text-center shadow-xl shadow-neutral-900/10 group cursor-pointer transition-all duration-500">
           
-          {/* Background image with sleek dark vignette */}
-          <div className="absolute inset-0 z-0">
+          {/* Background image layers with smooth hover cross-fade */}
+          <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+            {/* Layer 1: Original background (visible by default, fades out on hover) */}
             <LazyImage
-              src={bgImage}
+              src={originalBg}
               alt="Exclusive consultation banner backdrop"
-              className="w-full h-full object-cover opacity-35 mix-blend-luminosity grayscale group-hover:grayscale-0 hover:grayscale-0 contrast-125 transition-all duration-700 ease-out group-hover:scale-105"
+              className="absolute inset-0 w-full h-full object-cover opacity-85 transition-opacity duration-700 ease-out group-hover:opacity-0"
             />
-            <div className="absolute inset-0 bg-radial from-neutral-900/40 via-neutral-950/80 to-neutral-950" />
+
+            {/* Layer 2: Dark blurred car background (hidden by default, fades in smoothly on hover) */}
+            <LazyImage
+              src={hoverCarBg}
+              alt="Dark blurred sports car backdrop"
+              className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-all duration-700 ease-out group-hover:scale-105"
+            />
+
+            {/* Dark Radial Vignette for clean editorial readability */}
+            <div className="absolute inset-0 bg-radial from-neutral-900/20 via-neutral-950/65 to-neutral-950/90 pointer-events-none" />
           </div>
 
           {/* Content centered */}
@@ -53,7 +63,10 @@ export const ConsultationBanner: React.FC<ConsultationBannerProps> = ({
             {/* Button */}
             <div className="pt-2">
               <button
-                onClick={onBookCall}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onBookCall();
+                }}
                 className="group/btn inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white text-neutral-950 text-xs sm:text-sm font-semibold hover:bg-neutral-100 transition-all duration-200 hover:shadow-lg shadow-sm"
               >
                 <span>Book A Call</span>
