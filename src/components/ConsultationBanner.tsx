@@ -13,8 +13,8 @@ export const ConsultationBanner: React.FC<ConsultationBannerProps> = ({
 }) => {
   // 1. Original Default Background (Smooth Teal & Purple Abstract Waves)
   const originalBg = './images/banner_bg.jpg';
-  // 2. Hover State Background (Dark Blurred Car Backdrop matching reference image 1)
-  const hoverCarBg = './images/car_banner_hover.jpg';
+  // 2. Hover State Background (Dark Neon Coding & Web Developer Workspace matching user's reference image)
+  const hoverBg = './images/tech_banner_hover.jpg';
 
   return (
     <section className="py-10 md:py-16">
@@ -30,15 +30,15 @@ export const ConsultationBanner: React.FC<ConsultationBannerProps> = ({
               className="absolute inset-0 w-full h-full object-cover opacity-85 transition-opacity duration-700 ease-out group-hover:opacity-0"
             />
 
-            {/* Layer 2: Dark blurred car background (hidden by default, fades in smoothly on hover) */}
+            {/* Layer 2: Dark neon coding workspace background (hidden by default, fades in smoothly on hover) */}
             <LazyImage
-              src={hoverCarBg}
-              alt="Dark blurred sports car backdrop"
+              src={hoverBg}
+              alt="Dark neon developer workspace backdrop"
               className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-all duration-700 ease-out group-hover:scale-105"
             />
 
             {/* Dark Radial Vignette for clean editorial readability */}
-            <div className="absolute inset-0 bg-radial from-neutral-900/20 via-neutral-950/65 to-neutral-950/90 pointer-events-none" />
+            <div className="absolute inset-0 bg-radial from-neutral-900/15 via-neutral-950/60 to-neutral-950/90 pointer-events-none" />
           </div>
 
           {/* Content centered */}
