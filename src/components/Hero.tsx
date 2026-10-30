@@ -36,7 +36,7 @@ export const Hero: React.FC = () => {
 
               {/* 2. Main Heading: Hi, I'm Umair Habib (All Black) */}
               <ScrollReveal delay={0.15} direction="up">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[66px] font-bold tracking-tight text-neutral-950 leading-[1.12]">
+                <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[66px] font-bold tracking-tight text-neutral-950 leading-[1.12]">
                   Hi, I'm Umair Habib
                 </h1>
               </ScrollReveal>
@@ -57,7 +57,7 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Bottom Scroll Down Indicator */}
-            <ScrollReveal delay={0.45} direction="up" className="pt-12 sm:pt-16 md:pt-20">
+            <ScrollReveal delay={0.45} direction="up" className="pt-8 sm:pt-14 md:pt-20">
               <button
                 onClick={scrollToAbout}
                 className="group inline-flex items-center gap-2 text-xs md:text-sm font-medium text-neutral-500 hover:text-black transition-colors"
@@ -91,7 +91,7 @@ export const Hero: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/18 via-transparent to-transparent pointer-events-none" />
                 
                 {/* Floating status pill */}
-                <div className="absolute bottom-4 left-4 right-4 sm:right-auto bg-white/90 backdrop-blur-md px-3.5 py-2 rounded-full border border-neutral-200/80 shadow-xs flex items-center gap-2">
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-auto bg-white/90 backdrop-blur-md px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full border border-neutral-200/80 shadow-xs flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                   <span className="text-xs font-medium text-neutral-800">
                     Available for Web Dev &amp; Projects

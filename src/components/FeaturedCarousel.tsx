@@ -33,7 +33,7 @@ const PortfolioMockup: React.FC<{ onOpenImage: (data: LightboxData) => void }> =
       <div className="flex items-center justify-between pb-2.5 border-b border-neutral-200">
         <span className="text-xs md:text-sm font-extrabold text-black tracking-tight">UH</span>
         <div className="flex gap-2.5 sm:gap-3.5">
-          {['Home', 'About', 'Projects', 'Contact'].map((l) => (
+          {['Home', 'About', 'Projects'].map((l) => (
             <span key={l} className="text-[10px] md:text-[11px] font-medium text-black">
               {l}
             </span>
@@ -74,7 +74,7 @@ const PortfolioMockup: React.FC<{ onOpenImage: (data: LightboxData) => void }> =
             e.stopPropagation();
             onOpenImage(imgData);
           }}
-          className="relative w-28 h-20 sm:w-36 sm:h-24 md:w-38 md:h-28 rounded-xl overflow-hidden bg-neutral-100 border border-neutral-300 shadow-sm shrink-0 cursor-zoom-in group/img transition-transform duration-300 hover:scale-105"
+          className="relative w-24 h-18 sm:w-32 sm:h-22 md:w-38 md:h-28 rounded-xl overflow-hidden bg-neutral-100 border border-neutral-300 shadow-sm shrink-0 cursor-zoom-in group/img transition-transform duration-300 hover:scale-105"
           title="Click to open image in full view"
         >
           <LazyImage
@@ -109,7 +109,7 @@ const BusinessMockup: React.FC<{ onOpenImage: (data: LightboxData) => void }> = 
       <div className="flex items-center justify-between pb-2.5 border-b border-neutral-200">
         <span className="text-xs md:text-sm font-extrabold text-black">BrandCo</span>
         <div className="flex gap-2.5 sm:gap-3.5">
-          {['Home', 'About', 'Services', 'Contact'].map((l) => (
+          {['Home', 'About', 'Services'].map((l) => (
             <span key={l} className="text-[10px] md:text-[11px] font-medium text-black">
               {l}
             </span>
@@ -146,7 +146,7 @@ const BusinessMockup: React.FC<{ onOpenImage: (data: LightboxData) => void }> = 
             e.stopPropagation();
             onOpenImage(imgData);
           }}
-          className="relative w-28 h-20 sm:w-36 sm:h-24 md:w-40 md:h-28 rounded-xl overflow-hidden bg-neutral-100 border border-neutral-300 shadow-sm shrink-0 cursor-zoom-in group/img transition-transform duration-300 hover:scale-105"
+          className="relative w-24 h-18 sm:w-32 sm:h-22 md:w-38 md:h-28 rounded-xl overflow-hidden bg-neutral-100 border border-neutral-300 shadow-sm shrink-0 cursor-zoom-in group/img transition-transform duration-300 hover:scale-105"
           title="Click to open image in full view"
         >
           <LazyImage
@@ -201,7 +201,7 @@ const ProductMockup: React.FC<{ onOpenImage: (data: LightboxData) => void }> = (
             e.stopPropagation();
             onOpenImage(imgData);
           }}
-          className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-xl overflow-hidden bg-neutral-100 border border-neutral-300 shadow-sm shrink-0 cursor-zoom-in group/img transition-transform duration-300 hover:scale-105 flex items-center justify-center"
+          className="relative w-20 h-20 sm:w-26 sm:h-26 md:w-32 md:h-32 rounded-xl overflow-hidden bg-neutral-100 border border-neutral-300 shadow-sm shrink-0 cursor-zoom-in group/img transition-transform duration-300 hover:scale-105 flex items-center justify-center"
           title="Click to open image in full view"
         >
           <LazyImage
@@ -387,7 +387,7 @@ export const FeaturedCarousel: React.FC = () => {
           {FEATURED_PROJECTS.map((project) => (
             <div
               key={project.id}
-              className="min-w-[320px] sm:min-w-[380px] md:min-w-0 md:flex-1 group flex flex-col"
+              className="min-w-[270px] xs:min-w-[300px] sm:min-w-[360px] md:min-w-0 md:flex-1 group flex flex-col"
             >
               {/* Card Container */}
               <div className="bg-white rounded-3xl overflow-hidden flex flex-col h-full

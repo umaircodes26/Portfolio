@@ -36,7 +36,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F9FA] text-[#111111] relative selection:bg-neutral-900 selection:text-white">
+    <div className="min-h-screen bg-[#F8F9FA] text-[#111111] relative selection:bg-neutral-900 selection:text-white overflow-x-hidden w-full">
       
       {/* Optional Reference Presentation Mockup Top Header */}
       {isMockupView && (

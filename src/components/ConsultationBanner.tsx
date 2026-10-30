@@ -19,7 +19,7 @@ export const ConsultationBanner: React.FC<ConsultationBannerProps> = ({
   return (
     <section className="py-10 md:py-16">
       <div className="max-w-[1280px] mx-auto px-6 md:px-10">
-        <div className="relative rounded-3xl overflow-hidden bg-neutral-950 text-white min-h-[260px] md:min-h-[300px] flex items-center justify-center p-8 md:p-14 text-center shadow-xl shadow-neutral-900/10 group">
+        <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-neutral-950 text-white min-h-[240px] sm:min-h-[260px] md:min-h-[300px] flex items-center justify-center p-6 sm:p-10 md:p-14 text-center shadow-xl shadow-neutral-900/10 group">
           
           {/* Background image with sleek dark vignette */}
           <div className="absolute inset-0 z-0">
@@ -40,7 +40,7 @@ export const ConsultationBanner: React.FC<ConsultationBannerProps> = ({
             </span>
 
             {/* Headline */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-white leading-tight">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-white leading-tight">
               Exclusive Winter Deal Days: Get a Free Consultation!
             </h2>
 

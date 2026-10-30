@@ -22,7 +22,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({ onOpenVideo }) => {
   ];
 
   return (
-    <section id="about" className="py-20 md:py-32 relative overflow-hidden bg-white/60 border-t border-neutral-100">
+    <section id="about" className="py-14 sm:py-20 md:py-32 relative overflow-hidden bg-white/60 border-t border-neutral-100">
       <div className="max-w-[1280px] mx-auto px-6 md:px-10">
         
         {/* Main 3-Column Layout matching reference image 2 */}
@@ -38,7 +38,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({ onOpenVideo }) => {
               </div>
 
               {/* Heading: Hello, I'm Umair Habib */}
-              <h2 className="text-3xl sm:text-4xl md:text-[40px] font-bold tracking-tight text-neutral-950 leading-[1.12] mb-2">
+              <h2 className="text-2xl sm:text-3xl md:text-[40px] font-bold tracking-tight text-neutral-950 leading-[1.12] mb-2">
                 Hello, I'm <br />
                 Umair Habib
               </h2>

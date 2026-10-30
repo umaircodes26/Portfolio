@@ -158,7 +158,7 @@ export const ExperienceAccordion: React.FC<ExperienceAccordionProps> = ({
                         </div>
 
                         {/* Right: Narrative Description & Dark Circular Arrow Button */}
-                        <div className="lg:col-span-6 flex items-center justify-between gap-6">
+                        <div className="lg:col-span-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6">
                           <p className="text-xs sm:text-[13px] text-neutral-600 leading-relaxed">
                             {item.description}
                           </p>

@@ -69,8 +69,8 @@ export const LatestWorks: React.FC<LatestWorksProps> = ({
                 </div>
 
                 {/* Project title and link matching reference */}
-                <div className="flex items-center justify-between text-xs sm:text-[13.5px] font-medium text-neutral-800 pt-1">
-                  <span className="group-hover:text-black transition-colors truncate font-semibold">
+                <div className="flex items-center justify-between gap-2 text-xs sm:text-[13.5px] font-medium text-neutral-800 pt-1">
+                  <span className="group-hover:text-black transition-colors truncate font-semibold flex-1">
                     {project.title}
                   </span>
                   <a
@@ -82,7 +82,7 @@ export const LatestWorks: React.FC<LatestWorksProps> = ({
                         e.stopPropagation();
                       }
                     }}
-                    className="flex items-center gap-1 text-neutral-500 font-normal shrink-0 ml-2 group-hover:text-black transition-colors"
+                    className="flex items-center gap-1 text-neutral-500 font-normal shrink-0 group-hover:text-black transition-colors"
                   >
                     <span>—</span>
                     <span>{project.linkText}</span>

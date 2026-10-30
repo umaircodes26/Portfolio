@@ -13,7 +13,7 @@ export const VisionCTA: React.FC<VisionCTAProps> = ({ onBookCall }) => {
         
         {/* Dark Floating Card Matching Reference Image Exactly */}
         <ScrollReveal direction="up" delay={0.1} className="max-w-[920px] mx-auto">
-        <div className="w-full bg-[#1C1D21] rounded-[28px] sm:rounded-[36px] p-10 sm:p-16 md:p-20 text-center shadow-2xl shadow-neutral-900/10 border border-neutral-800/60 relative overflow-hidden">
+        <div className="w-full bg-[#1C1D21] rounded-[24px] sm:rounded-[32px] md:rounded-[36px] p-6 sm:p-10 md:p-16 lg:p-20 text-center shadow-2xl shadow-neutral-900/10 border border-neutral-800/60 relative overflow-hidden">
           
           {/* Subtle Ambient Radial Lighting */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-white/[0.03] rounded-full blur-3xl pointer-events-none" />
@@ -26,7 +26,7 @@ export const VisionCTA: React.FC<VisionCTAProps> = ({ onBookCall }) => {
             </div>
 
             {/* Main Headline */}
-            <h2 className="text-3xl sm:text-4xl md:text-[46px] font-bold tracking-tight text-white leading-[1.18] mb-5 max-w-xl">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[46px] font-bold tracking-tight text-white leading-[1.18] mb-4 sm:mb-5 max-w-xl">
               Got a Vision? Let's Bring<br className="hidden sm:inline" /> It to Life!
             </h2>
 

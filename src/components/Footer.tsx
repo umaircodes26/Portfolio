@@ -33,7 +33,7 @@ export const Footer: React.FC<FooterProps> = () => {
   ];
 
   return (
-    <footer className="bg-[#0C0C0E] text-white pt-16 pb-12 md:pt-24 md:pb-16 border-t border-neutral-900">
+    <footer className="bg-[#0C0C0E] text-white pt-12 pb-10 sm:pt-16 sm:pb-12 md:pt-24 md:pb-16 border-t border-neutral-900">
       <div className="max-w-[1280px] mx-auto px-6 md:px-10">
         
         {/* Top Section */}
@@ -41,7 +41,7 @@ export const Footer: React.FC<FooterProps> = () => {
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-10">
           
           {/* Left Navigation Links */}
-          <nav className="flex flex-wrap items-center gap-7 sm:gap-9 text-sm md:text-[15px] font-medium text-neutral-400 pt-2">
+          <nav className="flex flex-wrap items-center gap-4 sm:gap-7 md:gap-9 text-xs sm:text-sm md:text-[15px] font-medium text-neutral-400 pt-2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -123,7 +123,7 @@ export const Footer: React.FC<FooterProps> = () => {
         </ScrollReveal>
 
         {/* Horizontal Divider Line */}
-        <div className="border-t border-neutral-800/80 my-10 md:my-14" />
+        <div className="border-t border-neutral-800/80 my-8 sm:my-10 md:my-14" />
 
         {/* Bottom Credits & Back to Top */}
         <ScrollReveal direction="up" delay={0.15}>

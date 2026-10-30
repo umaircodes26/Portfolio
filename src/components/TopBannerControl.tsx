@@ -17,7 +17,7 @@ export const TopBannerControl: React.FC<TopBannerControlProps> = ({
   return (
     <aside
       aria-label="Presentation controls"
-      className="fixed bottom-6 right-6 z-40 flex items-center gap-2 p-1.5 rounded-full bg-neutral-900/95 text-white shadow-2xl backdrop-blur-md border border-neutral-700/60 text-xs animate-in slide-in-from-bottom-4"
+      className="fixed bottom-3 right-3 sm:bottom-6 sm:right-6 z-40 flex items-center gap-2 p-1.5 rounded-full bg-neutral-900/95 text-white shadow-2xl backdrop-blur-md border border-neutral-700/60 text-xs animate-in slide-in-from-bottom-4"
     >
       {/* Mockup Frame Toggle */}
       <button
