@@ -30,7 +30,7 @@ export const Hero: React.FC = () => {
               <ScrollReveal delay={0.05} direction="up">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-100 border border-neutral-200 text-neutral-900 text-xs sm:text-[13px] font-semibold tracking-wide shadow-2xs">
                   <span className="w-2 h-2 rounded-full bg-neutral-900" />
-                  <span>Web Developer (Intern)</span>
+                  <span>Web Developer</span>
                 </div>
               </ScrollReveal>
 
@@ -51,7 +51,7 @@ export const Hero: React.FC = () => {
               {/* 4. Paragraph Body Description */}
               <ScrollReveal delay={0.35} direction="up">
                 <p className="text-sm sm:text-base md:text-[16.5px] text-[#5D6578] leading-relaxed max-w-xl font-normal pt-1">
-                  I'm a passionate web developer and currently working as an intern. I love creating responsive and user-friendly websites using HTML, CSS, JavaScript and modern tools.
+                  I'm a passionate web developer dedicated to building clean, responsive, and user-friendly websites using HTML, CSS, JavaScript and modern tools.
                 </p>
               </ScrollReveal>
             </div>

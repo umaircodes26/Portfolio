@@ -13,7 +13,7 @@ export const ExperienceAccordion: React.FC<ExperienceAccordionProps> = ({
   onOpenResume,
   onSelectProject,
 }) => {
-  // Default expanded item is exp-1 (Web Developer Intern) matching reference screenshot
+  // Default expanded item is exp-1 (Web Developer) matching reference screenshot
   const [expandedId, setExpandedId] = useState<string | null>('exp-1');
   const [activeLightboxImage, setActiveLightboxImage] = useState<{ src: string; title: string } | null>(null);
 

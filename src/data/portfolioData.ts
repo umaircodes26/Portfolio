@@ -39,7 +39,7 @@ export interface BlogItem {
 export const EXPERIENCES: ExperienceItem[] = [
   {
     id: 'exp-1',
-    company: 'Web Developer Intern',
+    company: 'Web Developer',
     location: '',
     period: '6 Months (Recent)',
     role: 'Working on website design and development tasks, building responsive layouts, and improving frontend UI/UX skills.',

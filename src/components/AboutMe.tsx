@@ -43,14 +43,14 @@ export const AboutMe: React.FC<AboutMeProps> = ({ onOpenVideo }) => {
                 Umair Habib
               </h2>
 
-              {/* Subtitle: Web Developer Intern */}
+              {/* Subtitle: Web Developer */}
               <h3 className="text-lg sm:text-xl font-semibold text-neutral-900 tracking-tight mb-4">
-                Web Developer Intern
+                Web Developer
               </h3>
               
               {/* Paragraph Body */}
               <p className="text-neutral-800 text-xs sm:text-[14px] leading-relaxed max-w-md">
-                I'm a passionate and motivated Web Developer Intern, focused on building clean, responsive, and user-friendly websites. I have a good understanding of HTML, CSS, JavaScript and I'm also learning modern web technologies to improve my skills and create better digital experiences. I enjoy solving problems, exploring new tools, and turning ideas into real projects.
+                I'm a passionate and motivated Web Developer, focused on building clean, responsive, and user-friendly websites. I have a solid understanding of HTML, CSS, JavaScript and modern web technologies to create impactful digital experiences. I enjoy solving problems, exploring new tools, and turning ideas into real projects.
               </p>
             </div>
 
@@ -109,9 +109,9 @@ export const AboutMe: React.FC<AboutMeProps> = ({ onOpenVideo }) => {
                 6 Months
               </div>
 
-              {/* Subtitle: Internship Experience */}
+              {/* Subtitle: Hands-on Experience */}
               <div className="text-sm sm:text-[15px] font-bold text-neutral-950 mb-1">
-                Internship Experience
+                Hands-on Experience
               </div>
 
               {/* Caption */}
@@ -160,7 +160,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({ onOpenVideo }) => {
                   <span>My Learning Journey</span>
                 </div>
                 <p className="text-neutral-800 text-[12px] leading-relaxed">
-                  A short introduction to my current internship and the projects I'm building. Here you can see how I'm learning, growing, and gaining real-world experience as a web developer.
+                  A short introduction to my web development journey and the projects I'm building. Here you can see how I'm learning, growing, and gaining real-world experience as a web developer.
                 </p>
               </div>
             </div>
@@ -181,7 +181,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({ onOpenVideo }) => {
                     Practical Experience
                   </h4>
                   <p className="text-xs text-neutral-800 leading-relaxed">
-                    Currently working as a Web Developer Intern, gaining hands-on experience in building and improving websites.
+                    Working as a Web Developer, gaining hands-on experience in building and improving modern websites.
                   </p>
                 </div>
               </div>

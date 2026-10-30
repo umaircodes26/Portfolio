@@ -34,7 +34,7 @@ Built with **React 19**, **Vite 6**, **TypeScript**, **Tailwind CSS v4**, and **
 
 5. **Explore My Development Journey**:
    - Interactive experience accordion highlighting roles:
-     - Web Developer Intern
+     - Web Developer
      - Junior Frontend Developer
      - Freelance Web Developer
      - Frontend Development Learner

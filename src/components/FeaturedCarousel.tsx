@@ -24,7 +24,7 @@ const PortfolioMockup: React.FC<{ onOpenImage: (data: LightboxData) => void }> =
     src: imgSrc,
     alt: 'Web Developer Coding Workspace',
     title: 'Personal Portfolio Website',
-    subtitle: 'Web Developer Intern — Live Coding & Development Workspace',
+    subtitle: 'Web Developer — Live Coding & Development Workspace',
   };
 
   return (
@@ -53,7 +53,7 @@ const PortfolioMockup: React.FC<{ onOpenImage: (data: LightboxData) => void }> =
             Umair Habib
           </h4>
           <p className="text-[10px] md:text-[11px] font-semibold text-black mt-1">
-            Web Developer Intern
+            Web Developer
           </p>
           <p className="text-[9px] md:text-[10.5px] text-black leading-relaxed mt-1 font-normal">
             I build clean and responsive websites with modern technologies.
