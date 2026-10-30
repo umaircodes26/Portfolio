@@ -1,5 +1,7 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import { ScrollReveal } from './Common/ScrollReveal';
+import { LazyImage } from './Common/LazyImage';
 
 interface ConsultationBannerProps {
   onBookCall: () => void;
@@ -21,7 +23,7 @@ export const ConsultationBanner: React.FC<ConsultationBannerProps> = ({
           
           {/* Background image with sleek dark vignette */}
           <div className="absolute inset-0 z-0">
-            <img
+            <LazyImage
               src={bgImage}
               alt="Exclusive consultation banner backdrop"
               className="w-full h-full object-cover opacity-35 mix-blend-luminosity grayscale group-hover:grayscale-0 hover:grayscale-0 contrast-125 transition-all duration-700 ease-out group-hover:scale-105"
@@ -30,7 +32,7 @@ export const ConsultationBanner: React.FC<ConsultationBannerProps> = ({
           </div>
 
           {/* Content centered */}
-          <div className="relative z-10 max-w-2xl mx-auto space-y-4">
+          <ScrollReveal direction="up" delay={0.1} className="relative z-10 max-w-2xl mx-auto space-y-4">
             
             {/* Kicker */}
             <span className="inline-block text-[11px] sm:text-xs font-semibold tracking-wider uppercase text-neutral-400">
@@ -59,11 +61,10 @@ export const ConsultationBanner: React.FC<ConsultationBannerProps> = ({
               </button>
             </div>
 
-          </div>
+          </ScrollReveal>
 
         </div>
       </div>
     </section>
   );
 };
-

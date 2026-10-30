@@ -1,5 +1,7 @@
 import React from 'react';
 import { Play, Laptop, BookOpen, Briefcase, User, Monitor } from 'lucide-react';
+import { ScrollReveal } from './Common/ScrollReveal';
+import { LazyImage } from './Common/LazyImage';
 
 interface AboutMeProps {
   onOpenVideo: () => void;
@@ -27,7 +29,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({ onOpenVideo }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-start">
           
           {/* Column 1: Left Text & Hand-drawn Arrow */}
-          <div className="lg:col-span-4 flex flex-col justify-between h-full pt-1 space-y-6">
+          <ScrollReveal direction="up" delay={0.05} className="lg:col-span-4 flex flex-col justify-between h-full pt-1 space-y-6">
             <div>
               {/* Badge */}
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neutral-100 border border-neutral-200 text-neutral-900 text-[11px] font-semibold uppercase tracking-wider mb-4">
@@ -91,10 +93,10 @@ export const AboutMe: React.FC<AboutMeProps> = ({ onOpenVideo }) => {
                 <path d="M80,18 L95,20 L96,35" />
               </svg>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Column 2: Center 6 Months Card with Portrait Photo */}
-          <div className="lg:col-span-4 flex justify-center">
+          <ScrollReveal direction="up" delay={0.15} className="lg:col-span-4 flex justify-center w-full">
             <div className="w-full max-w-[340px] bg-white rounded-3xl p-6 sm:p-7 border border-neutral-200/80 shadow-xl shadow-neutral-900/4 hover:shadow-2xl hover:shadow-neutral-900/8 transition-all duration-300 group">
               
               {/* Badge Icon: Briefcase */}
@@ -119,7 +121,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({ onOpenVideo }) => {
 
               {/* Photo inside card */}
               <div className="rounded-2xl overflow-hidden aspect-[1/1] bg-neutral-100 border border-neutral-200/60 relative group-hover:scale-[1.01] transition-transform">
-                <img
+                <LazyImage
                   src={photoSrc}
                   alt="Umair Habib"
                   className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 hover:grayscale-0 contrast-[1.04] transition-all duration-500 ease-out"
@@ -127,10 +129,10 @@ export const AboutMe: React.FC<AboutMeProps> = ({ onOpenVideo }) => {
               </div>
 
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Column 3: Right Side (Video introduction + 2 Milestones) */}
-          <div className="lg:col-span-4 flex flex-col gap-6 pt-1">
+          <ScrollReveal direction="up" delay={0.25} className="lg:col-span-4 flex flex-col gap-6 pt-1">
             
             {/* Top Video Preview Card: My Learning Journey */}
             <div className="bg-white rounded-2xl p-4 border border-neutral-200/80 shadow-xs flex items-start gap-4">
@@ -138,7 +140,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({ onOpenVideo }) => {
                 onClick={onOpenVideo}
                 className="relative w-20 h-20 sm:w-22 sm:h-22 rounded-xl overflow-hidden bg-neutral-200 cursor-pointer group shadow-2xs border border-neutral-200/80 shrink-0"
               >
-                <img
+                <LazyImage
                   src={videoThumbSrc}
                   alt="Video Intro Thumbnail"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 hover:grayscale-0 transition-all duration-500 ease-out group-hover:scale-105"
@@ -204,7 +206,7 @@ export const AboutMe: React.FC<AboutMeProps> = ({ onOpenVideo }) => {
 
             </div>
 
-          </div>
+          </ScrollReveal>
 
         </div>
 

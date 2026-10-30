@@ -1,4 +1,5 @@
 import React from 'react';
+import { ScrollReveal } from './Common/ScrollReveal';
 import { ArrowUpRight } from 'lucide-react';
 
 interface VisionCTAProps {
@@ -11,7 +12,8 @@ export const VisionCTA: React.FC<VisionCTAProps> = ({ onBookCall }) => {
       <div className="max-w-[1280px] mx-auto px-6 md:px-10">
         
         {/* Dark Floating Card Matching Reference Image Exactly */}
-        <div className="max-w-[920px] mx-auto bg-[#1C1D21] rounded-[28px] sm:rounded-[36px] p-10 sm:p-16 md:p-20 text-center shadow-2xl shadow-neutral-900/10 border border-neutral-800/60 relative overflow-hidden">
+        <ScrollReveal direction="up" delay={0.1} className="max-w-[920px] mx-auto">
+        <div className="w-full bg-[#1C1D21] rounded-[28px] sm:rounded-[36px] p-10 sm:p-16 md:p-20 text-center shadow-2xl shadow-neutral-900/10 border border-neutral-800/60 relative overflow-hidden">
           
           {/* Subtle Ambient Radial Lighting */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-white/[0.03] rounded-full blur-3xl pointer-events-none" />
@@ -44,6 +46,7 @@ export const VisionCTA: React.FC<VisionCTAProps> = ({ onBookCall }) => {
           </div>
 
         </div>
+        </ScrollReveal>
 
       </div>
     </section>

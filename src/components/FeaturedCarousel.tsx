@@ -1,4 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { ScrollReveal } from './Common/ScrollReveal';
+import { LazyImage } from './Common/LazyImage';
 import { ArrowRight, ChevronLeft, ChevronRight, X, ZoomIn, Star, Heart } from 'lucide-react';
 
 /* ─────────────────────────────────────────────
@@ -75,7 +77,7 @@ const PortfolioMockup: React.FC<{ onOpenImage: (data: LightboxData) => void }> =
           className="relative w-28 h-20 sm:w-36 sm:h-24 md:w-38 md:h-28 rounded-xl overflow-hidden bg-neutral-100 border border-neutral-300 shadow-sm shrink-0 cursor-zoom-in group/img transition-transform duration-300 hover:scale-105"
           title="Click to open image in full view"
         >
-          <img
+          <LazyImage
             src={imgSrc}
             alt={imgData.alt}
             className="w-full h-full object-cover object-center transition-all duration-500 group-hover/img:brightness-105"
@@ -147,7 +149,7 @@ const BusinessMockup: React.FC<{ onOpenImage: (data: LightboxData) => void }> = 
           className="relative w-28 h-20 sm:w-36 sm:h-24 md:w-40 md:h-28 rounded-xl overflow-hidden bg-neutral-100 border border-neutral-300 shadow-sm shrink-0 cursor-zoom-in group/img transition-transform duration-300 hover:scale-105"
           title="Click to open image in full view"
         >
-          <img
+          <LazyImage
             src={imgSrc}
             alt={imgData.alt}
             className="w-full h-full object-cover object-center transition-all duration-500 group-hover/img:brightness-105"
@@ -202,7 +204,7 @@ const ProductMockup: React.FC<{ onOpenImage: (data: LightboxData) => void }> = (
           className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-xl overflow-hidden bg-neutral-100 border border-neutral-300 shadow-sm shrink-0 cursor-zoom-in group/img transition-transform duration-300 hover:scale-105 flex items-center justify-center"
           title="Click to open image in full view"
         >
-          <img
+          <LazyImage
             src={imgSrc}
             alt={imgData.alt}
             className="w-full h-full object-cover object-center transition-all duration-500 group-hover/img:brightness-105"
@@ -330,6 +332,7 @@ export const FeaturedCarousel: React.FC = () => {
       <div className="max-w-[1280px] mx-auto px-6 md:px-10">
 
         {/* ── Header Row ── */}
+        <ScrollReveal direction="up" delay={0.05}>
         <div className="flex items-start justify-between mb-8 md:mb-12 gap-4">
           <div className="flex-1">
             {/* Top pill label */}
@@ -372,8 +375,10 @@ export const FeaturedCarousel: React.FC = () => {
             </button>
           </div>
         </div>
+        </ScrollReveal>
 
         {/* ── Cards Carousel ── */}
+        <ScrollReveal direction="up" delay={0.15}>
         <div
           ref={scrollRef}
           onScroll={handleScroll}
@@ -459,6 +464,7 @@ export const FeaturedCarousel: React.FC = () => {
             </div>
           ))}
         </div>
+        </ScrollReveal>
 
         {/* ── View All Projects Button ── */}
         <div className="flex justify-center mt-12 md:mt-16">
@@ -503,7 +509,7 @@ export const FeaturedCarousel: React.FC = () => {
 
             {/* Modal Image Area */}
             <div className="p-4 sm:p-6 bg-neutral-100 flex items-center justify-center max-h-[75vh] overflow-auto">
-              <img
+              <LazyImage
                 src={activeLightbox.src}
                 alt={activeLightbox.alt}
                 className="max-h-[68vh] w-auto max-w-full rounded-2xl object-contain shadow-lg border border-neutral-200 bg-white"

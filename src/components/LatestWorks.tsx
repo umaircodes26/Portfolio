@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { ScrollReveal } from './Common/ScrollReveal';
+import { LazyImage } from './Common/LazyImage';
 import { ArrowUpRight, ArrowRight } from 'lucide-react';
 import { LATEST_WORKS, ProjectItem } from '../data/portfolioData';
 
@@ -19,6 +21,7 @@ export const LatestWorks: React.FC<LatestWorksProps> = ({
       <div className="max-w-[1280px] mx-auto px-6 md:px-10">
         
         {/* Header centered */}
+        <ScrollReveal direction="up" delay={0.05}>
         <div className="text-center max-w-xl mx-auto mb-12 md:mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neutral-200/70 text-neutral-800 text-[11px] font-semibold uppercase tracking-wider mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-neutral-900" />
@@ -29,6 +32,7 @@ export const LatestWorks: React.FC<LatestWorksProps> = ({
             Latest Works
           </h2>
         </div>
+        </ScrollReveal>
 
         {/* 3 Project Cards in Grid matching reference */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
@@ -44,7 +48,7 @@ export const LatestWorks: React.FC<LatestWorksProps> = ({
               >
                 {/* Image Showcase Card */}
                 <div className="relative aspect-[4/3] rounded-2xl md:rounded-3xl overflow-hidden bg-neutral-200 shadow-sm border border-neutral-200/60 mb-3.5">
-                  <img
+                  <LazyImage
                     src={imgSrc}
                     alt={project.title}
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 hover:grayscale-0 transition-all duration-700 ease-out group-hover:scale-105"
@@ -91,6 +95,7 @@ export const LatestWorks: React.FC<LatestWorksProps> = ({
         </div>
 
         {/* Bottom link: "Check out more -> View More" */}
+        <ScrollReveal direction="up" delay={0.25}>
         <div className="text-center pt-12 md:pt-16">
           <a
             href="#portfolio"
@@ -103,6 +108,7 @@ export const LatestWorks: React.FC<LatestWorksProps> = ({
             </span>
           </a>
         </div>
+        </ScrollReveal>
 
       </div>
     </section>

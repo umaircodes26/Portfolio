@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ScrollReveal } from './Common/ScrollReveal';
 import { Copy, Check, Github, ArrowUp } from 'lucide-react';
 
 interface FooterProps {
@@ -36,6 +37,7 @@ export const Footer: React.FC<FooterProps> = () => {
       <div className="max-w-[1280px] mx-auto px-6 md:px-10">
         
         {/* Top Section */}
+        <ScrollReveal direction="up" delay={0.05}>
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-10">
           
           {/* Left Navigation Links */}
@@ -118,11 +120,13 @@ export const Footer: React.FC<FooterProps> = () => {
           </div>
 
         </div>
+        </ScrollReveal>
 
         {/* Horizontal Divider Line */}
         <div className="border-t border-neutral-800/80 my-10 md:my-14" />
 
         {/* Bottom Credits & Back to Top */}
+        <ScrollReveal direction="up" delay={0.15}>
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-[13px] text-neutral-500">
           <div>
             © 2026 Umair Personal Portfolio. All rights reserved.
@@ -136,6 +140,7 @@ export const Footer: React.FC<FooterProps> = () => {
             <span className="text-sm font-semibold">↑</span>
           </button>
         </div>
+        </ScrollReveal>
 
       </div>
     </footer>

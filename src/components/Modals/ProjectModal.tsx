@@ -1,4 +1,5 @@
 import React from 'react';
+import { LazyImage } from '../Common/LazyImage';
 import { X, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import { ProjectItem } from '../../data/portfolioData';
 
@@ -34,7 +35,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
 
         {/* Modal Image Header */}
         <div className="relative aspect-[16/9] w-full bg-neutral-100 overflow-hidden shrink-0">
-          <img
+          <LazyImage
             src={imgSrc}
             alt={project.title}
             className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-out"
