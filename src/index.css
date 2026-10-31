@@ -70,28 +70,33 @@ a, button {
    Dedicated Print Stylesheet for 1-Page Resume
 ───────────────────────────────────────────── */
 @media print {
-  /* 6. Page setup: A4 portrait, 8mm margins */
   @page {
     size: A4 portrait;
     margin: 8mm;
   }
 
   html, body {
+    height: 100vh !important;
+    overflow: hidden !important;
+    margin: 0 !important;
     background: #ffffff !important;
     color: #000000 !important;
+    width: 100% !important;
+  }
+
+  body > *:not(#resume-modal-container) {
+    display: none !important;
+  }
+
+  #resume-modal-container {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
-    width: 100% !important;
-    height: auto !important;
-    overflow: visible !important;
   }
 
-  /* 2. Hide other page elements using body * { visibility: hidden; } */
-  body * {
-    visibility: hidden;
-  }
-
-  /* 2 & 7. Keep .resume-modal and all its children visible with exact color reproduction */
+  /* Keep .resume-modal and all its children visible with exact color reproduction */
   .resume-modal,
   .resume-modal * {
     visibility: visible !important;

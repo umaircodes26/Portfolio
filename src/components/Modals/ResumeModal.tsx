@@ -1,4 +1,5 @@
 import React from 'react';
+import { createPortal } from 'react-dom';
 import { X, Download, ExternalLink } from 'lucide-react';
 
 interface ResumeModalProps {
@@ -16,7 +17,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
     window.print();
   };
 
-  return (
+  const modalContent = (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200 overflow-y-auto resume-modal-overlay"
       onClick={onClose}
@@ -185,4 +186,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
       </div>
     </div>
   );
+
+  const container = typeof document !== 'undefined' ? document.getElementById('resume-modal-container') : null;
+  return container ? createPortal(modalContent, container) : modalContent;
 };
