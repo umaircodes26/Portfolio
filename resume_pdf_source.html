@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Umair Habib — Resume</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #111827;
+      background: #ffffff;
+      width: 210mm;
+      height: 297mm;
+      position: relative;
+      padding: 32mm 24mm 24mm 24mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .content {
+      flex: 1;
+    }
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+    .header-left h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #000000;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+    .header-left h1 span {
+      font-weight: 500;
+      color: #374151;
+    }
+    .header-left .location {
+      font-size: 15px;
+      color: #4b5563;
+      margin-top: 8px;
+      font-weight: 500;
+    }
+    .avatar {
+      width: 82px;
+      height: 98px;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+    }
+
+    /* Section divider & headers */
+    .section-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #000000;
+      margin-top: 26px;
+      margin-bottom: 12px;
+    }
+    .divider {
+      height: 1px;
+      background-color: #e5e7eb;
+      width: 100%;
+      margin-bottom: 14px;
+    }
+
+    /* Professional summary */
+    .summary-text {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: #1f2937;
+      font-weight: 400;
+    }
+
+    /* Core competencies table */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-top: 1px solid #e5e7eb;
+      border-bottom: 1px solid #e5e7eb;
+      margin-top: 12px;
+    }
+    .skill-col {
+      padding: 10px 8px;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: #111827;
+      text-align: left;
+    }
+    .skill-col:not(:first-child) {
+      border-left: 1px solid #f3f4f6;
+    }
+
+    /* Milestones */
+    .milestones {
+      margin-top: 6px;
+    }
+    .milestone-item {
+      margin-bottom: 22px;
+    }
+    .milestone-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 6px;
+    }
+    .milestone-title span {
+      font-weight: 600;
+      color: #374151;
+    }
+    .milestone-list {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    .milestone-list li {
+      font-size: 13px;
+      line-height: 1.55;
+      color: #1f2937;
+      margin-bottom: 4px;
+    }
+
+    /* Footer */
+    .footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #ececec;
+      padding: 16px 24mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: #111827;
+    }
+    .footer span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <!-- Header -->
+    <div class="header">
+      <div class="header-left">
+        <h1>Umair Habib <span>— Frontend Web Developer</span></h1>
+        <div class="location">Faisalabad, Pakistan</div>
+      </div>
+      <img src="public/images/cv_avatar.jpg" alt="Umair Habib" class="avatar" />
+    </div>
+
+    <!-- Section 1: Summary -->
+    <div class="section-title">PROFESSIONAL SUMMARY</div>
+    <div class="divider"></div>
+    <p class="summary-text">
+      An experienced Frontend Web Developer with a strong background in creating intuitive, responsive web interfaces, utilizing modern design workflows and WordPress to craft high-quality digital experiences.
+    </p>
+
+    <!-- Section 2: Core Competencies -->
+    <div class="section-title" style="margin-top: 28px;">CORE COMPETENCIES &amp; TOOLKIT</div>
+    <div class="skills-grid">
+      <div class="skill-col">HTML</div>
+      <div class="skill-col">CSS</div>
+      <div class="skill-col">JavaScript</div>
+      <div class="skill-col">React</div>
+      <div class="skill-col">WordPress</div>
+    </div>
+
+    <!-- Section 3: Milestones -->
+    <div class="section-title" style="margin-top: 32px;">CAREER MILESTONES</div>
+    <div class="divider"></div>
+    <div class="milestones">
+      <div class="milestone-item">
+        <div class="milestone-title">
+          Lead Frontend Developer &amp; Designer <span>— Freelance (2025 – Present)</span>
+        </div>
+        <ul class="milestone-list">
+          <li>Design and build interactive, responsive web interfaces and customized WordPress solutions.</li>
+          <li>Collaborate with clients to translate wireframes and design systems into modern web experiences.</li>
+        </ul>
+      </div>
+
+      <div class="milestone-item">
+        <div class="milestone-title">
+          Web Developer &amp; UI/UX Specialist <span>— Innovative Designs (2025 – 2026)</span>
+        </div>
+        <ul class="milestone-list">
+          <li>Crafted responsive websites and interactive user journeys with CSS, JavaScript, and React.</li>
+          <li>Maintained and customized asset-rich web layouts and design standards.</li>
+        </ul>
+      </div>
+
+      <div class="milestone-item" style="margin-bottom: 0;">
+        <div class="milestone-title">
+          Frontend Developer <span>— Visionary Creations (2025 – 2026)</span>
+        </div>
+        <ul class="milestone-list">
+          <li>Built and optimized responsive web interfaces, ensuring cross-browser compatibility and seamless UI workflows.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Footer -->
+  <div class="footer">
+    <span>Email: umairhabibofficial087@gmail.com</span>
+    <span>WhatsApp / Phone: 03089429038</span>
+  </div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ScrollReveal } from './Common/ScrollReveal';
 import { LazyImage } from './Common/LazyImage';
-import { ArrowUpRight, X, ZoomIn } from 'lucide-react';
+import { ArrowUpRight, X, ZoomIn, Download } from 'lucide-react';
 import { EXPERIENCES, ExperienceItem } from '../data/portfolioData';
 
 interface ExperienceAccordionProps {
@@ -61,13 +61,26 @@ export const ExperienceAccordion: React.FC<ExperienceAccordionProps> = ({
                   Dedicated to crafting responsive, high-performance web experiences. Over my journey, I have collaborated on diverse design and development tasks, continually learning and refining my frontend UI/UX skills.
                 </p>
                 
-                <button
-                  onClick={onOpenResume}
-                  className="mt-4 group inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-semibold text-neutral-900 hover:text-black border-b border-black pb-0.5 transition-colors"
-                >
-                  <span>Resume</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </button>
+                <div className="mt-4 flex flex-wrap items-center gap-3">
+                  <button
+                    onClick={onOpenResume}
+                    className="group inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-semibold text-neutral-900 hover:text-black border-b border-black pb-0.5 transition-colors cursor-pointer"
+                    title="Preview single-page CV"
+                  >
+                    <span>Resume</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </button>
+
+                  <a
+                    href="./Umair_Habib_Resume.pdf"
+                    download="Umair_Habib_Resume.pdf"
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-medium transition-colors shadow-2xs"
+                    title="Directly download single-page PDF"
+                  >
+                    <Download className="w-3 h-3" />
+                    <span>Download CV</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
