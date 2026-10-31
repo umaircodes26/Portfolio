@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopZone — Aura Pro Wireless Headphones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --dark: #0f172a;
+      --gray-bg: #f8fafc;
+      --border: #e2e8f0;
+      --text-muted: #64748b;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--gray-bg);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    header {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--dark);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--primary); }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .cart-btn {
+      position: relative;
+      background: #eff6ff;
+      border: 1px solid #dbeafe;
+      padding: 8px 16px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--primary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .cart-btn:hover { background: #dbeafe; }
+    .cart-count {
+      background: var(--primary);
+      color: white;
+      font-size: 0.75rem;
+      padding: 2px 7px;
+      border-radius: 9999px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+    .product-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 56px;
+      background: white;
+      padding: 48px;
+      border-radius: 32px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+    }
+    /* Gallery */
+    .gallery-box {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .main-preview {
+      background: #f1f5f9;
+      border-radius: 24px;
+      height: 440px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .main-preview img {
+      max-height: 85%;
+      max-width: 85%;
+      object-fit: contain;
+      transition: transform 0.4s ease, opacity 0.3s ease;
+    }
+    .main-preview:hover img {
+      transform: scale(1.05);
+    }
+    .badge-deal {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: #ef4444;
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      letter-spacing: 0.5px;
+    }
+    .color-thumbnails {
+      display: flex;
+      gap: 12px;
+    }
+    .color-thumb {
+      width: 70px;
+      height: 70px;
+      background: #f8fafc;
+      border-radius: 14px;
+      border: 2px solid var(--border);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      transition: all 0.2s;
+    }
+    .color-thumb.active {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    }
+    .color-thumb img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    /* Details */
+    .product-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .category-tag {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .product-title {
+      font-size: 2.4rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+    .rating-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .stars { color: #f59e0b; font-size: 1.1rem; }
+    .rating-text { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; }
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .current-price {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--dark);
+    }
+    .original-price {
+      font-size: 1.3rem;
+      color: #94a3b8;
+      text-decoration: line-through;
+    }
+    .save-tag {
+      background: #dcfce7;
+      color: #15803d;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 9999px;
+    }
+    .product-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    /* Options */
+    .option-group { margin-bottom: 24px; }
+    .option-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .color-swatches {
+      display: flex;
+      gap: 12px;
+    }
+    .swatch {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      position: relative;
+      border: 2px solid white;
+      box-shadow: 0 0 0 1px var(--border);
+      transition: transform 0.2s;
+    }
+    .swatch.active {
+      box-shadow: 0 0 0 2px var(--primary);
+      transform: scale(1.1);
+    }
+    .swatch-black { background: #1e293b; }
+    .swatch-silver { background: #cbd5e1; }
+    .swatch-blue { background: #2563eb; }
+    /* Quantity & Add to Cart */
+    .action-row {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-top: 12px;
+    }
+    .qty-selector {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #f8fafc;
+      overflow: hidden;
+    }
+    .qty-btn {
+      width: 44px;
+      height: 48px;
+      background: transparent;
+      border: none;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dark);
+      transition: background 0.2s;
+    }
+    .qty-btn:hover { background: #e2e8f0; }
+    .qty-num {
+      width: 44px;
+      text-align: center;
+      font-weight: 800;
+      font-size: 1rem;
+    }
+    .btn-add-cart {
+      flex: 1;
+      height: 50px;
+      background: var(--dark);
+      color: white;
+      border: none;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+      transition: all 0.25s;
+    }
+    .btn-add-cart:hover {
+      background: black;
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px rgba(15, 23, 42, 0.25);
+    }
+    /* Tabs */
+    .tabs-section {
+      margin-top: 56px;
+      background: white;
+      padding: 40px;
+      border-radius: 28px;
+      border: 1px solid var(--border);
+    }
+    .tab-nav {
+      display: flex;
+      gap: 32px;
+      border-bottom: 2px solid #f1f5f9;
+      margin-bottom: 28px;
+    }
+    .tab-btn {
+      background: transparent;
+      border: none;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      padding: 12px 0;
+      cursor: pointer;
+      position: relative;
+      transition: color 0.2s;
+    }
+    .tab-btn.active {
+      color: var(--primary);
+    }
+    .tab-btn.active::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--primary);
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .specs-table td {
+      padding: 14px 0;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 0.95rem;
+    }
+    .specs-table td:first-child {
+      color: var(--text-muted);
+      font-weight: 600;
+      width: 220px;
+    }
+    .specs-table td:last-child {
+      font-weight: 700;
+      color: var(--dark);
+    }
+    /* Toast */
+    #cartToast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #0f172a;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-weight: 700;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+      display: none;
+      z-index: 100;
+      align-items: center;
+      gap: 12px;
+      animation: slideUp 0.3s ease;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @media (max-width: 860px) {
+      .product-layout { grid-template-columns: 1fr; padding: 28px; }
+      .product-title { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <a href="#" class="logo">
+        <span class="logo-dot"></span>
+        <span>ShopZone</span>
+      </a>
+      <div class="nav-actions">
+        <button class="cart-btn" id="headerCartBtn">
+          <span>🛒 Cart</span>
+          <span class="cart-count" id="cartBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="product-layout">
+      <!-- Gallery -->
+      <div class="gallery-box">
+        <div class="main-preview">
+          <span class="badge-deal">SAVE 28% TODAY</span>
+          <img id="mainProductImg" src="/images/ft_product.jpg" alt="Aura Pro Wireless Headphones" />
+        </div>
+        <div class="color-thumbnails">
+          <div class="color-thumb active" data-img="/images/ft_product.jpg" data-name="Midnight Black">
+            <img src="/images/ft_product.jpg" alt="Black" />
+          </div>
+          <div class="color-thumb" data-img="/images/freelance_ui_mockup.jpg" data-name="Cosmic Silver">
+            <img src="/images/freelance_ui_mockup.jpg" alt="Silver" />
+          </div>
+          <div class="color-thumb" data-img="/images/freelance_web_screen.jpg" data-name="Royal Navy">
+            <img src="/images/freelance_web_screen.jpg" alt="Navy" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Details -->
+      <div class="product-details">
+        <div class="category-tag">Audio &amp; Electronics</div>
+        <h1 class="product-title">Aura Sound Pro Wireless Smart Headphones</h1>
+        <div class="rating-row">
+          <span class="stars">★★★★★</span>
+          <span class="rating-text">4.9 (1,420 Verified Reviews)</span>
+        </div>
+        <div class="price-row">
+          <span class="current-price" id="priceDisplay">$49.99</span>
+          <span class="original-price">$69.99</span>
+          <span class="save-tag">In Stock</span>
+        </div>
+        <p class="product-desc">
+          Engineered for immersive acoustic depth with active noise cancellation, studio-grade 40mm titanium drivers, and up to 48 hours of ultra-long battery life.
+        </p>
+
+        <!-- Color Selection -->
+        <div class="option-group">
+          <label class="option-label">Color: <span id="colorNameLabel" style="font-weight: 800; color: var(--primary);">Midnight Black</span></label>
+          <div class="color-swatches">
+            <div class="swatch swatch-black active" data-img="/images/ft_product.jpg" data-color="Midnight Black"></div>
+            <div class="swatch swatch-silver" data-img="/images/freelance_ui_mockup.jpg" data-color="Cosmic Silver"></div>
+            <div class="swatch swatch-blue" data-img="/images/freelance_web_screen.jpg" data-color="Royal Navy"></div>
+          </div>
+        </div>
+
+        <!-- Quantity & Add to Cart -->
+        <div class="action-row">
+          <div class="qty-selector">
+            <button class="qty-btn" id="qtyMinus">-</button>
+            <span class="qty-num" id="qtyVal">1</span>
+            <button class="qty-btn" id="qtyPlus">+</button>
+          </div>
+          <button class="btn-add-cart" id="addToCartBtn">
+            <span>Add to Cart &bull;</span>
+            <span id="totalPriceBtn">$49.99</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabs Section -->
+    <div class="tabs-section">
+      <div class="tab-nav">
+        <button class="tab-btn active" data-tab="specs">Specifications</button>
+        <button class="tab-btn" data-tab="battery">Battery &amp; Charging</button>
+        <button class="tab-btn" data-tab="warranty">Shipping &amp; Warranty</button>
+      </div>
+
+      <div class="tab-content active" id="tab-specs">
+        <table class="specs-table">
+          <tr><td>Driver Unit</td><td>40mm Custom Titanium Drivers</td></tr>
+          <tr><td>Frequency Response</td><td>10Hz – 40,000Hz (Hi-Res Audio Certified)</td></tr>
+          <tr><td>Noise Cancellation</td><td>Hybrid Active Noise Cancellation (4 Mics)</td></tr>
+          <tr><td>Bluetooth Version</td><td>Bluetooth 5.3 + Multi-point Pairing</td></tr>
+        </table>
+      </div>
+
+      <div class="tab-content" id="tab-battery">
+        <table class="specs-table">
+          <tr><td>Battery Life</td><td>Up to 48 Hours playback (ANC Off) / 38 Hours (ANC On)</td></tr>
+          <tr><td>Fast Charging</td><td>10 minutes charge = 5 hours playback</td></tr>
+          <tr><td>Charging Port</td><td>Universal USB-C Fast Charge</td></tr>
+        </table>
+      </div>
+
+      <div class="tab-content" id="tab-warranty">
+        <table class="specs-table">
+          <tr><td>Delivery</td><td>Free Express Worldwide Delivery (2-4 Business Days)</td></tr>
+          <tr><td>Warranty</td><td>2-Year Full Hardware Replacement Warranty</td></tr>
+          <tr><td>Returns</td><td>30-Day No-Questions-Asked Money-Back Guarantee</td></tr>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <div id="cartToast">
+    <span>✓ Added to cart successfully!</span>
+  </div>
+
+  <script>
+    // Product State
+    const basePrice = 49.99;
+    let quantity = 1;
+    let cartTotalItems = 0;
+
+    const mainImg = document.getElementById("mainProductImg");
+    const colorLabel = document.getElementById("colorNameLabel");
+    const swatches = document.querySelectorAll(".swatch");
+    const thumbs = document.querySelectorAll(".color-thumb");
+    const priceDisplay = document.getElementById("priceDisplay");
+    const totalPriceBtn = document.getElementById("totalPriceBtn");
+    const qtyVal = document.getElementById("qtyVal");
+    const cartBadge = document.getElementById("cartBadge");
+    const cartToast = document.getElementById("cartToast");
+
+    function updateColor(imgSrc, colorName) {
+      mainImg.style.opacity = "0.4";
+      setTimeout(() => {
+        mainImg.src = imgSrc;
+        mainImg.style.opacity = "1";
+      }, 150);
+      colorLabel.textContent = colorName;
+
+      swatches.forEach(s => s.classList.toggle("active", s.getAttribute("data-color") === colorName));
+      thumbs.forEach(t => t.classList.toggle("active", t.getAttribute("data-name") === colorName));
+    }
+
+    swatches.forEach(swatch => {
+      swatch.addEventListener("click", () => {
+        updateColor(swatch.getAttribute("data-img"), swatch.getAttribute("data-color"));
+      });
+    });
+
+    thumbs.forEach(thumb => {
+      thumb.addEventListener("click", () => {
+        updateColor(thumb.getAttribute("data-img"), thumb.getAttribute("data-name"));
+      });
+    });
+
+    // Quantity Counter
+    document.getElementById("qtyPlus").addEventListener("click", () => {
+      quantity++;
+      qtyVal.textContent = quantity;
+      updatePrice();
+    });
+
+    document.getElementById("qtyMinus").addEventListener("click", () => {
+      if (quantity > 1) {
+        quantity--;
+        qtyVal.textContent = quantity;
+        updatePrice();
+      }
+    });
+
+    function updatePrice() {
+      const total = (basePrice * quantity).toFixed(2);
+      totalPriceBtn.textContent = "$" + total;
+    }
+
+    // Add to Cart
+    document.getElementById("addToCartBtn").addEventListener("click", () => {
+      cartTotalItems += quantity;
+      cartBadge.textContent = cartTotalItems;
+      cartToast.style.display = "flex";
+      setTimeout(() => {
+        cartToast.style.display = "none";
+      }, 3500);
+    });
+
+    // Tabs switching
+    const tabBtns = document.querySelectorAll(".tab-btn");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        tabBtns.forEach(b => b.classList.remove("active"));
+        tabContents.forEach(c => c.classList.remove("active"));
+
+        btn.classList.add("active");
+        const tabId = "tab-" + btn.getAttribute("data-tab");
+        document.getElementById(tabId).classList.add("active");
+      });
+    });
+  </script>
+</body>
+</html>
+
