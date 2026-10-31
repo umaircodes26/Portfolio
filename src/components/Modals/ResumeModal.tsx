@@ -22,7 +22,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-[680px] bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-neutral-200 my-auto flex flex-col animate-in zoom-in-95 duration-200 resume-modal-dialog"
+        className="resume-modal relative w-full max-w-[680px] bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-neutral-200 my-auto flex flex-col animate-in zoom-in-95 duration-200 resume-modal-dialog"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Control Bar (Hidden when printing) */}
