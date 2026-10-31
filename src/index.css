@@ -66,3 +66,186 @@ a, button {
   transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* ─────────────────────────────────────────────
+   Dedicated Print Stylesheet for 1-Sheet Resume
+───────────────────────────────────────────── */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+
+  /* Reset body and html for single-sheet print */
+  html, body {
+    width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    background: #ffffff !important;
+    color: #111111 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide entire background website, navbar, hero, sections, footer, and overlay controls */
+  header,
+  section,
+  main,
+  footer,
+  nav,
+  .no-print,
+  #root > *:not(.resume-modal-overlay) {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Unset root container styling */
+  #root,
+  #root > div {
+    background: transparent !important;
+    min-height: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Transform modal into an exact 1-page paper document */
+  .resume-modal-overlay {
+    position: static !important;
+    inset: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    overflow: visible !important;
+    z-index: auto !important;
+  }
+
+  .resume-modal-dialog {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    background: #ffffff !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+
+  .resume-print-sheet {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    display: block !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Print Header */
+  .resume-print-header {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    margin-bottom: 12px !important;
+    padding-bottom: 8px !important;
+  }
+
+  .resume-print-avatar {
+    width: 74px !important;
+    height: 90px !important;
+    object-fit: cover !important;
+    object-position: top !important;
+    border-radius: 6px !important;
+    border: 1px solid #d1d5db !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Print Skills Grid */
+  .resume-print-skills {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+    border-top: 1px solid #e5e7eb !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    padding: 6px 0 !important;
+    margin-top: 6px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .resume-print-skills > div {
+    font-size: 10.5pt !important;
+    font-weight: 600 !important;
+    color: #111827 !important;
+    text-align: left !important;
+    padding: 4px 6px !important;
+  }
+
+  /* Print Milestones */
+  .resume-print-milestones {
+    margin-top: 6px !important;
+  }
+
+  .resume-print-milestones > div {
+    margin-bottom: 10px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .resume-print-milestones ul {
+    margin-top: 3px !important;
+    padding-left: 18px !important;
+  }
+
+  .resume-print-milestones li {
+    font-size: 9.5pt !important;
+    line-height: 1.45 !important;
+    color: #1f2937 !important;
+    margin-bottom: 2px !important;
+  }
+
+  /* Print Footer Contact Bar */
+  .resume-print-footer {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin: 18px 0 0 0 !important;
+    padding: 10px 14px !important;
+    background-color: #ECECEC !important;
+    border-radius: 4px !important;
+    border: 1px solid #e5e7eb !important;
+    font-size: 9pt !important;
+    font-weight: 600 !important;
+    color: #111827 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Prevent any element breaking into page 2 */
+  * {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+}
+
